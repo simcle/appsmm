@@ -91,7 +91,7 @@
                         </div>
                         <div>
                             <div>Puncak</div>
-                            <div>{{avg.avg_cod_j2 || 0.00}}</div>
+                            <div>{{avg.max_cod_j2 || 0.00}}</div>
                         </div>
                     </div>
                     <div v-if="sensor" class="text-xl font-semibold text-right" style="color: #ec4899">
@@ -347,7 +347,7 @@ import {modbus} from '../db'
 import axios from 'axios'
 export default {
     setup () {
-         const threshold = ref('')
+        const threshold = ref('')
         const sensorSource = computed(() => modbus)
         const sensor = useDatabaseObject(sensorSource)
         const hoizontalDottedLine = {
